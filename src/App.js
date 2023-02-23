@@ -1,9 +1,11 @@
+import Expenses from "./components/Expenses/Expenses";
+
 const App = () => {
-  return (
-    <div>
-      <h1>test</h1>
-    </div>
-  );
-}
+    return(
+        <div>
+            <Expenses/>
+        </div>
+    );
+};
 
 export default App;
