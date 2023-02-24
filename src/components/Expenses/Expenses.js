@@ -4,7 +4,9 @@ import './Expenses.css';
 const Expenses = (props) => {
     return(
         <div className='expenses'>
-            <ExpenseItem title={props.expenses[0].title} amount={props.expenses[0].amount} date={props.expenses[0].date}/>
+            {props.expenses.map(expense => (
+                <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />
+            ))}
         </div>
     );
 };
