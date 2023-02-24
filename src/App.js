@@ -30,7 +30,7 @@ const dummy_expenses = [
 const App = () => {
     return(
         <div>
-            <Expenses/>
+            <Expenses expenses={dummy_expenses}/>
         </div>
     );
 };
