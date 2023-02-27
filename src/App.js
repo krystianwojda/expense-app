@@ -1,3 +1,5 @@
+import React, {useState} from "react";
+
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
@@ -29,10 +31,21 @@ const dummy_expenses = [
 ];
 
 const App = () => {
+    const [expenses, setExpenses] = useState(dummy_expenses);
+
+    const saveExpenseHandler = (expense) => {
+        setExpenses((prevState) => {
+            return [
+                expense,
+                ...prevState
+            ];
+        })
+    };
+
     return(
         <div>
-            <NewExpense/>
-            <Expenses expenses={dummy_expenses}/>
+            <NewExpense onSaveExpense={saveExpenseHandler}/>
+            <Expenses expenses={expenses}/>
         </div>
     );
 };
